@@ -57,6 +57,11 @@
             font-size: 15px;
             color: #333;
         }
+        .sign-up h5 {
+            margin-bottom: 5px;
+            font-size: 15px;
+            color: #333;
+        }
 
         .chat-list-search input {
             width: 100%;
@@ -74,21 +79,23 @@
             box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
         }
 
+       
         .submit {
             width: 100%;
             border: none;
-            background-color: whitesmoke;
+            background-color: #007bff;
             padding: 14px 28px;
             font-size: 16px;
             border-radius: 4px;
             cursor: pointer;
-            color: black;
+            color: white;
+            margin-top: 10px;
         }
 
         .submit:hover {
-            background: cornflowerblue;
-            color: black;
+            background: #0056b3;
         }
+
 
         .image-container {
             position: relative;
@@ -130,6 +137,10 @@
                 <input type="password" id="password">
             </div>
             <button type="submit" class="submit" id="loginButton">Log in</button>
+            <div class="sign-up">
+                <h5>Don't have account? 
+                <a href="{{ route('signup') }}">Sign-Up</a></h5>
+            </div>
         </div>
     </div>
     <div class="image-container">
@@ -160,7 +171,7 @@
             var email = $('#email').val().trim();
             var password = $('#password').val().trim();
             
-            if(email ==''){
+            if(email == ''){
                 swal({
                     title: "Error!",
                     text: 'Please enter a valid email',
@@ -168,14 +179,14 @@
                     button: "Ok",
                 });
             }
-            if(password ==''){
-                swal({
-                    title: "Error!",
-                    text: 'Please enter the Password',
-                    icon: "error",
-                    button: "Ok",
-                });
-            }
+            // if(password == ''){
+            //     swal({
+            //         title: "Error!",
+            //         text: 'Please enter the Password',
+            //         icon: "error",
+            //         button: "Ok",
+            //     });
+            // }
             
         });
     });
